@@ -19,7 +19,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(cats);
     return (
       <Router>
         <Header />
