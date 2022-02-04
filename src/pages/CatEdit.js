@@ -5,6 +5,7 @@ import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 export default class CatEdit extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       editCat: {
         name: this.props.cat.name,
@@ -30,7 +31,7 @@ export default class CatEdit extends Component {
   };
 
   render() {
-    console.log(this.state.editCat);
+    console.log(this.state.editCat.name);
     return (
       <>
         <h2>Edit Cat Information</h2>
@@ -70,6 +71,7 @@ export default class CatEdit extends Component {
             Update Profile
           </Button>
         </Form>
+
         {this.state.submitted && (
           <Redirect to={`/catshow/${this.props.cat.id}`} />
         )}

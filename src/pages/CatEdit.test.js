@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import CatEdit from "./CatEdit";
+import cat from "../mockCat";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("when Cat Edit Component renders...", () => {
-  it("I can see submitted change from false to true", () => {
-    const renderedCatEdit = shallow(<CatEdit />);
-    expect(renderedCatEdit.this.state.submitted.text()).to.equal("false");
-    renderedCatEdit.update();
-    expect(renderedCatEdit.text()).to.equal("true");
+  it("I can see a h2 tag", () => {
+    const renderedCatEdit = shallow(<CatEdit cat={cat} />);
+    const renderedCatEditRoute = renderedCatEdit.find("h2");
+    expect(renderedCatEditRoute.length).toEqual(1);
   });
 });
