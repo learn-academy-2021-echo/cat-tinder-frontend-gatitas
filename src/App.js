@@ -18,8 +18,11 @@ export default class App extends Component {
     };
   }
   createCat = (cat) => {
-    console.log(cat)
-  }
+    console.log(cat);
+  };
+  updateCat = (cat) => {
+    console.log(cat);
+  };
 
   render() {
     return (
@@ -28,24 +31,32 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route
-              path="/catindex"
-              render={(props) => <CatIndex cats={this.state.cats} />}
-               />
+            path="/catindex"
+            render={(props) => <CatIndex cats={this.state.cats} />}
+          />
 
           <Route
-              path="/catshow/:id"
-              render={(props) => {
-                let catId = +props.match.params.id
-                let cat = this.state.cats.find(cat => cat.id === catId)
-                return <CatShow cat={cat} />
-              }}
-              />
+            path="/catshow/:id"
+            render={(props) => {
+              let catId = +props.match.params.id;
+              let cat = this.state.cats.find((cat) => cat.id === catId);
+              return <CatShow cat={cat} />;
+            }}
+          />
 
           <Route
-              path="/catnew"
-              render={(props) => <CatNew createCat={this.createCat} />}
-              />
-          <Route path="/catedit" component={CatEdit} />
+            path="/catnew"
+            render={(props) => <CatNew createCat={this.createCat} />}
+          />
+          <Route
+            path="/catedit/:id"
+            render={(props) => {
+              let catId = +props.match.params.id;
+              let cat = this.state.cats.find((cat) => cat.id === catId);
+
+              return <CatEdit cat={cat} updateCat={this.updateCat} />;
+            }}
+          />
           <Route component={NotFound} />
         </Switch>
         <Footer />
