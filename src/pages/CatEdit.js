@@ -8,10 +8,10 @@ export default class CatEdit extends Component {
 
     this.state = {
       editCat: {
-        name: this.props.cat.name,
-        age: this.props.cat.age,
-        enjoys: this.props.cat.enjoys,
-        image: this.props.cat.image,
+        name: this.props.cat.name ? this.props.cat.name : "not found",
+        age: this.props.cat.age ? this.props.cat.age : 0,
+        enjoys: this.props.cat.enjoys ? this.props.cat.enjoys : "error",
+        image: this.props.cat.image ? this.props.cat.image : "not found"
       },
       submitted: false,
     };

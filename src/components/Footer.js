@@ -3,14 +3,12 @@ import styles from './Footer.module.css'
 
 export default class Footer extends Component {
   render() {
-    return( <div>
+    return(
       <footer className={styles.container}>
         <div className={styles.yearEstablished}>
-            <span id={styles.year}>2021 Established</span>
+            <span id={styles.year}>Salvador Antonio 2022</span>
         </div>
-      </footer >
-    </div>
+      </footer>
     )
   }
 }
-
