@@ -7,10 +7,10 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <NavLink to="/">
-          {/* <img src={catLogo} alt="logo for Cat Tinder" className="cat-logo" /> */}
-        </NavLink>
         <div className="nav-links">
+          <ul>
+            <NavLink to="/">Home</NavLink>
+          </ul>
           <ul>
             <NavLink to="/catindex">Meet the Cats</NavLink>
           </ul>

@@ -11,7 +11,7 @@ export default class CatEdit extends Component {
         name: this.props.cat.name ? this.props.cat.name : "not found",
         age: this.props.cat.age ? this.props.cat.age : 0,
         enjoys: this.props.cat.enjoys ? this.props.cat.enjoys : "error",
-        image: this.props.cat.image ? this.props.cat.image : "not found"
+        image: this.props.cat.image ? this.props.cat.image : "not found",
       },
       submitted: false,
     };
@@ -26,7 +26,7 @@ export default class CatEdit extends Component {
   };
 
   handleSubmit = () => {
-    this.props.updateCat(this.state.editCat);
+    this.props.updateCat(this.state.editCat, this.props.cat.id);
     this.setState({ submitted: true });
   };
 
